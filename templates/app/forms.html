@@ -1,0 +1,22 @@
+<h1>trash can s</h1>
+<section>
+    <form action="predict" method="post">
+        {% csrf_token %}
+
+        <div class="row">
+            <label for="">enter your username</label>
+            <input type="text" name="username" placeholder="username"><br>
+        </div>
+        <div class="row">
+            <label for="">enter your password</label>
+            <input type="password" name="password" placeholder="password"><br>
+        </div>
+        <button type="submit">Login</button>
+    </form>
+    <h1>File content</h1>
+    <form action="{% url 'file'%}" method="post" enctype="multipart/form-data">
+         {% csrf_token %}
+        <input id="uploadbutton" type="file" value="Browse" name="file" accept="text" />
+        <input type="submit" value="Upload" />
+    </form>
+</section>
