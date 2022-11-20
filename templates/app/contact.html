@@ -8,10 +8,9 @@
 -->
 
 <html lang="zxx">
-
 <head>
   <meta charset="utf-8">
-  <title>Parsa | Portfolio Template</title>
+  <title>whatsapp analyzer</title>
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,19 +18,15 @@
 
   <!-- ** Plugins Needed for the Project ** -->
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/static/plugins/bootstrap/bootstrap.min.css">
   <!-- slick slider -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="/static/plugins/slick/slick.css">
   <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="/static/plugins/themify-icons/themify-icons.css">
 
   <!-- Main Stylesheet -->
-  <link href="css/style.css" rel="stylesheet">
-
-  <!--Favicon-->
-  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
+  <link href="/static/css/style.css" rel="stylesheet">
+  <link href="/static/css/style.css.map" rel="stylesheet">
 </head>
 
 <body>
@@ -50,7 +45,7 @@
 
 <header class="navigation">
   <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="index.html"><img class="img-fluid" src="images/logo.png" alt="parsa"></a>
+    <a class="navbar-brand" href="index.html"><img class="img-fluid" src="/static/images/logo.png" alt=""></a>
     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navogation"
       aria-controls="navogation" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -58,16 +53,6 @@
 
     <div class="collapse navbar-collapse text-center" id="navogation">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link text-uppercase text-dark dropdown-toggle" href="#" id="navbarDropdown"
-            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Home
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="index.html">Homepage 1</a>
-            <a class="dropdown-item" href="homepage-2.html">Homepage 2</a>
-          </div>
-        </li>
         <li class="nav-item">
           <a class="nav-link text-uppercase text-dark" href="about.html">About</a>
         </li>
@@ -78,34 +63,27 @@
           <a class="nav-link text-uppercase text-dark" href="contact.html">Contact</a>
         </li>
       </ul>
-      <form class="form-inline position-relative ml-lg-4">
-        <input class="form-control px-0 w-100" type="search" placeholder="Search">
-        <!-- <button class="search-icon" type="submit"><i class="ti-search text-dark"></i></button> -->
-        <a href="search.html" class="search-icon"><i class="ti-search text-dark"></i></a>
-      </form>
     </div>
   </nav>
 </header>
 
 <section class="section">
+  <form action="{% url 'file'%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
         <h2 class="mb-4">Contact Us</h2>
-        <img src="images/contact.jpg" alt="author" class="img-fluid w-100 mb-4">
-        <p class="mb-5">Strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream and, as I lie close to the earth, a thousand unknown plants are noticed by me.<br><br>When I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains.</p>
-        <form action="#" class="row">
+        <img src="/static/images/contact.jpg" alt="author" class="img-fluid w-100 mb-4">
+        <p class="mb-5">Strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream and, as I lie close to the earth, a thousand unknown plants are noticed by me</p>
           <div class="col-lg-6">
-            <input type="text" class="form-control mb-4" name="name" id="name" placeholder="Name">
+            <input type="text"  class="form-control mb-4" name="username" placeholder="yourname"><br>
           </div>
           <div class="col-lg-6">
-            <input type="email" class="form-control mb-4" name="email" id="email" placeholder="Email">
+            <input id="uploadbutton" type="file" value="Browse" name="file" accept="text" />
           </div>
           <div class="col-12">
-            <textarea name="message" id="message" class="form-control mb-4" placeholder="Message..."></textarea>
-          </div>
-          <div class="col-12">
-            <button class="btn btn-primary">Submit</button>
+            <input type="submit" value="Upload" class='btn btn-primary' />
           </div>
         </form>
       </div>
@@ -157,29 +135,28 @@
   </div>
   <div class="text-center pb-3">
     <p class="mb-0">Copyright ©<script>var CurrentYear = new Date().getFullYear()
-    document.write(CurrentYear)</script> a theme by  <a href="https://themefisher.com/">themefisher.com</a></p>
+    document.write(CurrentYear)</script> website of   <a href="frozenboy">frozenboy</a></p>
   </div>
 </footer>
 
-<!-- jQuery -->
-<script src="plugins/jQuery/jquery.min.js"></script>
+<script src="/static/plugins/jQuery/jquery.min.js"></script>
 <!-- Bootstrap JS -->
-<script src="plugins/bootstrap/bootstrap.min.js"></script>
+<script src="/static/plugins/bootstrap/bootstrap.min.js"></script>
 <!-- slick slider -->
-<script src="plugins/slick/slick.min.js"></script>
+<script src="/static/plugins/slick/slick.min.js"></script>
 <!-- masonry -->
-<script src="plugins/masonry/masonry.js"></script>
+<script src="/static/plugins/masonry/masonry.js"></script>
 <!-- instafeed -->
-<script src="plugins/instafeed/instafeed.min.js"></script>
+<script src="/static/plugins/instafeed/instafeed.min.js"></script>
 <!-- smooth scroll -->
-<script src="plugins/smooth-scroll/smooth-scroll.js"></script>
+<script src="/static/plugins/smooth-scroll/smooth-scroll.js"></script>
 <!-- headroom -->
-<script src="plugins/headroom/headroom.js"></script>
+<script src="/static/plugins/headroom/headroom.js"></script>
 <!-- reading time -->
-<script src="plugins/reading-time/readingTime.min.js"></script>
+<script src="/static/plugins/reading-time/readingTime.min.js"></script>
 
 <!-- Main Script -->
-<script src="js/script.js"></script>
+<script src="/static/js/script.js"></script>
 
 </body>
 </html>
